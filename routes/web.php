@@ -17,26 +17,36 @@ use Illuminate\Support\Facades\Route;
     return 'Olá, seja bem vindo ao curso!!';
 }); */
 
-Route::get('/', 'PrincipalController@principal');
+Route::get('/', 'PrincipalController@principal')->name('site.index');
 
 /* Route::get('/sobre-nos', function () {
     return 'Somos lorem ipsum etc';
 }); */
 
-Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 
 /* Route::get('/contato', function () {
     return 'Contato via cartas apenas. Caixa postal: 666-6969';
 }); */
 
-Route::get('/contato', 'ContatoController@contato');
+Route::get('/contato', 'ContatoController@contato')->name('site.contato');
+Route::get('/login', function(){ return 'Login'; })->name('site.login');
 
-Route::get('/contato/{nome}/{categoria_id}', 
+
+// /app
+Route::prefix('/app')->group(function(){
+    Route::get('/clientes', function(){ return 'Clientes'; })->name('app.clientes');
+    Route::get('/fornecedores', function(){ return 'Fornecedores'; })->name('app.fornecedores');
+    Route::get('/produtos', function(){ return 'Produtos'; })->name('app.produtos');
+});
+// os names são usados apenas dentro da aplicação
+
+/* Route::get('/contato/{nome}/{categoria_id}', 
 function(
     string $nome = 'Desconhecido', 
     int $categoria_id = 1
 ) {
     echo "Estamos aqui, $nome   -  $categoria_id"; 
-})-> where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
+})-> where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+'); */
 
 // Route::get($uri, $callback);

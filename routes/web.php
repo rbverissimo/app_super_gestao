@@ -37,6 +37,6 @@ function(
     int $categoria_id = 1, 
 ) {
     echo "Estamos aqui, $nome   -  $categoria_id"; 
-}) -> where('categoria_id', '[0-9]+');
+}) -> where('categoria_id', '[0-9]+') ->where('nome', '[A-Za-z]+');
 
 // Route::get($uri, $callback);

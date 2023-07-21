@@ -61,3 +61,7 @@ Route::get('/rota2', function(){
 })->name('site.rota2');
 
 // Route::redirect('/rota2', 'rota1');
+
+Route::fallback(function(){
+    echo 'Não encontrado! :( </br><a href="/">Clique aqui</a> '; 
+});

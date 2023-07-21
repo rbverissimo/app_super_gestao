@@ -52,7 +52,12 @@ function(
 // Route::get($uri, $callback);
 
 //Redirecionamento
-Route::get('/rota1', function(){ return 'Rota 1'; })->name('site.rota1');
-// Route::get('/rota2', function(){ return 'Rota 2'; })->name('site.rota2');
+Route::get('/rota1', function(){ 
+    echo 'Rota 1'; 
+})->name('site.rota1');
 
-Route::redirect('/rota2', 'rota1');
+Route::get('/rota2', function(){ 
+    return redirect()->route('/site.rota1'); 
+})->name('site.rota2');
+
+// Route::redirect('/rota2', 'rota1');

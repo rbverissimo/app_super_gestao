@@ -52,15 +52,17 @@ function(
 // Route::get($uri, $callback);
 
 //Redirecionamento
-Route::get('/rota1', function(){ 
+/* Route::get('/rota1', function(){ 
     echo 'Rota 1'; 
-})->name('site.rota1');
+})->name('site.rota1'); */
 
-Route::get('/rota2', function(){ 
+/* Route::get('/rota2', function(){ 
     return redirect()->route('/site.rota1'); 
-})->name('site.rota2');
+})->name('site.rota2'); */
 
 // Route::redirect('/rota2', 'rota1');
+
+Route::get('/teste/{param1}/{param2}', 'TesteController@teste')->name('site.teste');
 
 Route::fallback(function(){
     echo 'Não encontrado! :( </br><a href="'.route('site.index').'">Clique aqui</a> '; 

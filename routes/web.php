@@ -62,7 +62,8 @@ function(
 
 // Route::redirect('/rota2', 'rota1');
 
-Route::get('/teste/{param1}/{param2}', 'TesteController@teste')->name('site.teste');
+Route::get('/teste/{param1?}/{param2?}', 
+'TesteController@teste')->name('site.teste');
 
 Route::fallback(function(){
     echo 'Não encontrado! :( </br><a href="'.route('site.index').'">Clique aqui</a> '; 

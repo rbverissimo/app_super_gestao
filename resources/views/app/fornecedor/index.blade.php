@@ -28,7 +28,7 @@ Status: {{ $fornecedores[0]['status'] }}
       Fornecedor inativo
 @endunless --}}
 
-@isset($forncedores)
+@isset($fornecedores)
       Fornecedor: {{ $fornecedores[0]['nome']}}
       <br>
       Status: {{ $fornecedores[0]['status']}}
@@ -36,7 +36,7 @@ Status: {{ $fornecedores[0]['status'] }}
       CNPJ: {{ $fornecedores[0]['cnpj'] }}
 @endisset
 <br>
-@isset($forncedores)
+@isset($fornecedores)
       Fornecedor: {{ $fornecedores[1]['nome']}}
       <br>
       Status: {{ $fornecedores[1]['status']}}
@@ -45,3 +45,11 @@ Status: {{ $fornecedores[0]['status'] }}
             CNPJ: {{ $fornecedores[1]['cnpj'] }}
       @endisset
 @endisset
+
+
+@empty($fornecedores)
+{{-- O que é empty para o php
+      '', 0, 0.0, '0', null, false, array(), $var sem atribuição
+--}}
+      <p>Não existem fornecedores!</p>
+@endempty

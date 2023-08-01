@@ -1,15 +1,14 @@
-<h3>Fornecedor.blade funcionando!!!!!</h3>
+<h3>Fornecedor</h3>
 
-{{-- Fica aqui o comentário que será descartado pelo motor interpretador --}}
 @php
-      // Comentário usando síntaxe nativa
-      /* 
-            Mais um comentário só que em bloco
-      */
-      echo 'Dentro do bloco PHP, um teste';
+
+
 @endphp
 
-<br>
-{{'Texto de teste'}}
-<br>
-<?= 'Texto de teste com síntaxe pura php' ?>
+@if(count($fornecedores) > 0 && count($fornecedores) < 10)
+      <h3>Existem alguns fornecedores cadastrados</h3>
+@elseif(count($fornecedores) > 10)
+      <h3>Existem vários fornecedores cadastrados</h3>
+@else
+      <h3>Ainda não existem fornecedores cadastrados</h3>
+@endif

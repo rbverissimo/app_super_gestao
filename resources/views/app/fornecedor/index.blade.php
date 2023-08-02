@@ -29,14 +29,20 @@ Status: {{ $fornecedores[0]['status'] }}
 @endunless --}}
 
 @isset($fornecedores)
-      Fornecedor: {{ $fornecedores[0]['nome']}}
+      Fornecedor: {{ $fornecedores[1]['nome']}}
       <br>
-      Status: {{ $fornecedores[0]['status']}}
+      Status: {{ $fornecedores[1]['status']}}
       <br>
-      CNPJ: {{ $fornecedores[0]['cnpj'] }}
+      CNPJ: {{ $fornecedores[1]['cnpj'] ?? 'Dado não foi preenchido' }}
+      <!-- 
+            se $variável testada não definida
+            ou
+            $variável testada possuir valor null
+      -->
 @endisset
 <br>
-@isset($fornecedores)
+
+{{-- @isset($fornecedores)
       Fornecedor: {{ $fornecedores[1]['nome']}}
       <br>
       Status: {{ $fornecedores[1]['status']}}
@@ -44,7 +50,7 @@ Status: {{ $fornecedores[0]['status'] }}
       @isset($fornecedores[1]['cnpj'])
             CNPJ: {{ $fornecedores[1]['cnpj'] }}
       @endisset
-@endisset
+@endisset --}}
 
 
 @empty($fornecedores)

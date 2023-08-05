@@ -102,8 +102,11 @@ Status: {{ $fornecedores[0]['status'] }}
 @php
       $teste = ['Same name', $fornecedores[1]['nome'], 'Something']
 @endphp
+<br>
+<h4>Uso do forelse -- isset loop com a diretiva @@empty</h4>
 @forelse ($teste as $i)
-      Teste: {{$i}}
+      Iteracação atual: {{ $loop ->iteration}} <br>
+      Teste: {{$i}} <br>
 @empty
       Não foram encontrados elementos para teste
 @endforelse 

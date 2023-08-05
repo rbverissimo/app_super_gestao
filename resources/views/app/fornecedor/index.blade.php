@@ -91,3 +91,8 @@ Status: {{ $fornecedores[0]['status'] }}
       <p>Fornecedor {{ $i }} CNPJ: {{$fornecedores[$i]['cnpj'] ?? 'nulo'}} identificado </p>
       @php $i++ @endphp
 @endwhile
+
+
+@foreach ($fornecedores as $indice => $fornecedor )
+      {{$fornecedor['status']}}
+@endforeach

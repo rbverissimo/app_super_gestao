@@ -95,4 +95,15 @@ Status: {{ $fornecedores[0]['status'] }}
 
 @foreach ($fornecedores as $indice => $fornecedor )
       {{$fornecedor['status']}}
+      <br>
 @endforeach
+
+<hr>
+@php
+      $teste = ['Same name', $fornecedores[1]['nome'], 'Something']
+@endphp
+@forelse ($teste as $i)
+      Teste: {{$i}}
+@empty
+      Não foram encontrados elementos para teste
+@endforelse 

@@ -84,3 +84,10 @@ Status: {{ $fornecedores[0]['status'] }}
 @for ($i = 0 ; $i < 10 ; $i++)
       {{ $i + $i * 4}} <br>
 @endfor
+
+
+@php $i = 0 @endphp
+@while (isset($fornecedores[$i]))
+      <p>Fornecedor {{ $i }} CNPJ: {{$fornecedores[$i]['cnpj'] ?? 'nulo'}} identificado </p>
+      @php $i++ @endphp
+@endwhile

@@ -107,6 +107,12 @@ Status: {{ $fornecedores[0]['status'] }}
 @forelse ($teste as $i)
       Iteracação atual: {{ $loop ->iteration}} <br>
       Teste: {{$i}} <br>
+      @if ($loop ->first)
+            Primeira iteração do loop <br>
+      @elseif($loop ->last)
+            Última iteração do loop <br>
+            Total de registros: {{$loop ->count}}
+      @endif
 @empty
       Não foram encontrados elementos para teste
 @endforelse 

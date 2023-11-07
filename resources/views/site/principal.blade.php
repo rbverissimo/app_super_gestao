@@ -6,7 +6,6 @@
 @section('titulo', $titulo)
 
 @section('conteudo')
-            @include('site.layouts._partials.topo')
             <div class="conteudo-destaque">    
                   <div class="esquerda">
                         <div class="informacoes">

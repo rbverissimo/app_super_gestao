@@ -3,7 +3,7 @@
       <link rel="stylesheet" href="{{ asset('css/estilo_basico.css')}}">
 @endpush
 
-@section('titulo', 'Home')
+@section('titulo', $titulo)
 
 @section('conteudo')
             <div class="topo">

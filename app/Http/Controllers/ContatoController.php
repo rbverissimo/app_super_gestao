@@ -10,6 +10,8 @@ class ContatoController extends Controller
 
         $titulo = 'Contato';
 
+        var_dump($_GET);
+
         return view('site.contato', compact('titulo'));
     }
 }

@@ -3,6 +3,8 @@
     <link rel="stylesheet" href="{{ asset('css/estilo_basico.css')}}">
 @endpush
 
+@section('titulo', 'Contato')
+
 @section('conteudo')
     <div class="topo">
         <div class="logo">

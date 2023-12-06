@@ -54,7 +54,15 @@ class AjusteProdutosFiliais extends Migration
             $table->integer('estoque_maximo');
         });
 
-        Schema::dropIfExists('produto_filias');
+        Schema::table('produto_filiais', function(Blueprint $table){
+            $table->dropForeign('produto_filiais_filial_id_foreign');
+            $table->dropForeign('produto_filiais_produto_id_foreign');
+
+            $table->dropColumn('filial_id');
+            $table->dropColumn('produto_id');
+        });
+
+        Schema::dropIfExists('produto_filiais');
 
         Schema::dropIfExists('filiais');
     }

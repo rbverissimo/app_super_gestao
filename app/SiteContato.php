@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SiteContato extends Model
 {
-    //
+    //.save() --> salva o objeto no banco de dados;
 }

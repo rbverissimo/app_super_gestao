@@ -14,6 +14,15 @@ class SiteContato extends Model
     //::whereBetween('campo_comparado_igual', 'conjunto_de_param_entre') esse conjunto é inclusivo
 
     //whereNotBetween(), apenas o contrário do filtro anterior
+    
+    // é possivel concatenar um where ao outro através do operador &&
+    //.where(coluna, operador, condicao)->whereIn(coluna, condicoes)->whereBetween(coluna, intervalo)->get();
+
+
+    //é possível concatenar um where ao outro através do operador || também:
+    //.where(coluna, operador, condicao)->orWhereIn(coluna, condicoes)
+
+    //whereNull(coluna) e whereNotNull(coluna) também é possível
 
     protected $fillable = ['nome', 'telefone', 'email', 'motivo_contato', 'mensagem'];
 }

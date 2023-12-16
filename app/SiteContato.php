@@ -24,5 +24,9 @@ class SiteContato extends Model
 
     //whereNull(coluna) e whereNotNull(coluna) também é possível
 
+    //whereDate(coluna_de_data, condicao);
+    //whereDay(coluna_de_data, condicao_dia);
+    //whereMonth() e whereYear() e whereTime()  mesma ideia;
+
     protected $fillable = ['nome', 'telefone', 'email', 'motivo_contato', 'mensagem'];
 }

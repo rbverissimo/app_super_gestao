@@ -12,23 +12,20 @@ class SiteContatoSeeder extends Seeder
      */
     public function run()
     {
-        $count = 0;
-        while($count < 100) {
+        SiteContato::create([
+            'nome' => 'Contato Novo',
+            'telefone' => '(62) 99856-1019',
+            'email'=> 'contato@contatonovo.com.br',
+            'motivo_contato'=> '2',
+            'mensagem'=>'Olá, gostaria de mais informações sobre o Super Gestão!'
+        ]);
 
-            SiteContato::create([
-                'nome' => 'Contato '.$count,
-                'telefone' => $count < 10 ? '(62) 99856-100'.$count : '(62) 99856-10'.$count,
-                'email'=> 'contato@contato'.$count.'.com.br',
-                'motivo_contato'=> $count % 2 == 0 ? '1' : '2',
-                'mensagem'=>'Olá, eu sou o Contato '.$count
-            ]);
-
-            $count++;
-
-        }
-    }
-
-    private function updateDados() {
-
+        $s = new SiteContato();
+        $s->nome='Contato 002';
+        $s->telefone='(44) 98934-2300';
+        $s->email='contatonovo@contato.net';
+        $s->motivo_contato='3';
+        $s->mensagem='Olha, esse site tá uma bosta';
+        $s->save();
     }
 }

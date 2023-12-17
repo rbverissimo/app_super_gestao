@@ -28,5 +28,8 @@ class SiteContato extends Model
     //whereDay(coluna_de_data, condicao_dia);
     //whereMonth() e whereYear() e whereTime()  mesma ideia;
 
+    //whereColumn(coluna 1, coluna 2)  comparação por igualdade
+    //whereColumn(Coluna 1, operador, coluna 2) 
+
     protected $fillable = ['nome', 'telefone', 'email', 'motivo_contato', 'mensagem'];
 }

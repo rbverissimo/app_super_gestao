@@ -29,7 +29,7 @@ class SiteContatoSeeder extends Seeder
         $s->mensagem='Olha, esse site tá uma bosta';
         $s->save();
         */
-        // SiteContato::factory()->count(100)->create();
+        // SiteContato::factory()->count(100)->create(); // Laravel 8+ 
         factory(SiteContato::class, 100)->create();
     }
 }

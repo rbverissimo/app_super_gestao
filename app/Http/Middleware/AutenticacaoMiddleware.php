@@ -14,21 +14,15 @@ class AutenticacaoMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $metodo, $perfil)
+    public function handle($request, Closure $next)
     {
 
-        if($metodo === 'padrao'){
-            echo 'Método de autenticação padrão! '.'<br>';
-        }
+        session_start();
 
-        if($perfil === 'visitante'){
-            echo 'Olá, visitante!'.'<br>';
-        }
-
-        if(true) {
+        if(isset($_SESSION['email']) && isset($_SESSION['email']) != ''){
             return $next($request);
+        } else {
+            return redirect()->route('site.login', ['erro' => 2]);
         }
-
-        return Response('Acessado negado! Forneça uma autenticação!!!');
     }
 }

@@ -1,6 +1,6 @@
 @extends('site.layouts.basico')
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/estilo_basico.css')}}">
+      <link rel="stylesheet" href="{{ asset('css/estilo_basico.css')}}">
 @endpush
 
 @section('titulo', $titulo)
@@ -11,11 +11,26 @@
                   <h1>Login</h1>
             </div>
             <div class="informacao-pagina">
-                  <div style="display:flex; justify-content: center">
+                  <div style="display:flex; flex-direction: column; width: 75%; margin-right: 12.5%; margin-left: 12.5%">
+                        <span style="background-color: #dd0426; color: #fff; border-radius: 5px">
+                              {{ isset($erro) && $erro != '' ? $erro : '' }}
+                        </span>
                         <form action={{route('site.login')}} method="POST">
                               @csrf
-                              <input class="borda-preta" name="usuario" placeholder="Usuário: " type="text" />
-                              <input class="borda-preta" type="password" name="senha" placeholder="Senha: " />
+                              
+                              <input class="borda-preta" 
+                              name="usuario" 
+                              value="{{old('usuario')}}"
+                              placeholder="Usuário: " type="text" />
+                              <span style="color: red;">{{ $errors->has('usuario') ? $errors->first('usuario') : '' }}</span>
+
+                              <input class="borda-preta"
+                              type="password" 
+                              name="senha" 
+                              value="{{old('senha')}}"
+                              placeholder="Senha: " />
+                              <span style="color: red;">{{ $errors->has('senha') ? $errors->first('senha') : '' }}</span>
+
                               <button class="borda-preta" type="submit">Acessar</button>
                         </form>
                   </div>

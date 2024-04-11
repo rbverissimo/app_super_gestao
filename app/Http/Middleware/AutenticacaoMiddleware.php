@@ -14,8 +14,21 @@ class AutenticacaoMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $metodo, $perfil)
     {
+
+        if($metodo === 'padrao'){
+            echo 'Método de autenticação padrão! '.'<br>';
+        }
+
+        if($perfil === 'visitante'){
+            echo 'Olá, visitante!'.'<br>';
+        }
+
+        if(true) {
+            return $next($request);
+        }
+
         return Response('Acessado negado! Forneça uma autenticação!!!');
     }
 }

@@ -31,5 +31,5 @@ class SiteContato extends Model
     //whereColumn(coluna 1, coluna 2)  comparação por igualdade
     //whereColumn(Coluna 1, operador, coluna 2) 
 
-    protected $fillable = ['nome', 'telefone', 'email', 'motivo_contato', 'mensagem'];
+    protected $fillable = ['nome', 'telefone', 'email', 'motivo_contatos_id', 'mensagem'];
 }

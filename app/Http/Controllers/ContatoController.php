@@ -39,8 +39,6 @@ class ContatoController extends Controller
         // $contato_2->create($request->all());
 
         $motivos_contatos = MotivoContato::all();
-
-        dd($motivos_contatos);
         
         return view('site.contato', compact('titulo', 'motivos_contatos'));
     }

@@ -50,7 +50,19 @@ class ContatoController extends Controller
             'email' => 'email',
             'motivo_contatos_id' => 'required',
             'mensagem' => 'required|max:2000',
-        ]);
+        ],
+        [
+            'nome.required' => 'O nome precisa estar  preenchido',
+            'nome.min' => 'O nome não pode ser tão curto. ',
+            'nome.max' => 'O nome não pode ser tão longo. ',
+            'nome.unique' => 'O nome informado já está em uso. ',
+            'telefone.required' => 'O telefone precisa estar preenchido.',
+            'email.email' => 'O e-mail precisa ser válido. ',
+            'motivo_contatos_id.required' => 'Escolha um motivo de contato. ',
+            'mensagem.required' => 'A mensagem não pode estar vazia. ',
+            'mensagem.max' => 'A mensagem está muito longa. '
+        ]
+        );
 
         SiteContato::create($request->all());
         return redirect()->route('site.index');

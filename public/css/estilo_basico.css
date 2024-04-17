@@ -187,3 +187,9 @@
             .redes-sociais img {
                   margin: 0px 15px 0px 15px;
             }
+
+            .mensagem-erro {
+                  color: #a22c29; 
+                  font-size: 0.8rem; 
+                  font-weight: bold;
+            }

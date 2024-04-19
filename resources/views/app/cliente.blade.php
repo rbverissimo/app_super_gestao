@@ -7,5 +7,5 @@
 @section('titulo', $titulo)
 
 @section('conteudo')
-
+    
 @endsection

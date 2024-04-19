@@ -32,7 +32,7 @@ Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(functi
     Route::get('/cliente', 'ClienteController@index')
         ->name('app.cliente');
     Route::get('/fornecedores','FornecedorController@index')
-        ->name('app.fornecedore');
+        ->name('app.fornecedor');
     Route::get('/produto', 'ProdutoController@index')
         ->name('app.produto');
 });

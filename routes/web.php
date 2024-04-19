@@ -25,12 +25,16 @@ Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
 // /app
 Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(function(){
-    Route::get('/clientes', function(){ return 'Clientes'; })
-        ->name('app.clientes');
+    Route::get('/home', 'HomeController@index')
+        ->name('app.home');
+    Route::get('/sair', 'LoginController@sair')
+        ->name('app.sair');
+    Route::get('/cliente', 'ClienteController@index')
+        ->name('app.cliente');
     Route::get('/fornecedores','FornecedorController@index')
-        ->name('app.fornecedores');
-    Route::get('/produtos', function(){ return 'Produtos'; })
-        ->name('app.produtos');
+        ->name('app.fornecedore');
+    Route::get('/produto', 'ProdutoController@index')
+        ->name('app.produto');
 });
 // os names são usados apenas dentro da aplicação
 
